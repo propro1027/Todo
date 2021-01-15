@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= full_title((yield(:title)) %></title>
-    <!--helper applicationに飛ぶ-->
-    
-    
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                               'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application',
+                               'data-turbolinks-track': 'reload' %>
+    
+    <!--_shim.html.erb アンダーバーはパーシャル  このコードはapp/views/layouts/_shim.html.erbというファイルを探して、
+その内容を評価して結果をビューに挿入します。-->
+    <%= render'layouts/shim'%>
+    
+    <!--ホームレイアウトbootstrap-->
+    
   </head>
-
   <body>
-    <%= yield %>
+    <%= render'layouts/header'%>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,9 +1,6 @@
-<% provide(:title,"home") %>
-<!DOCTYPE html>
-<html>
-    <body>
-        <h>Task App</h>
-        <p>TaskAppは簡易ToDo管理ツールです。</p>
-    </body>
-        
-</html>
+<% provide(:title, "Top") %>
+<div class="center jumbotron">
+  <h>Task App</h>
+  <p>TaskAppは簡易ToDo管理ツールです。</p>
+  <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
